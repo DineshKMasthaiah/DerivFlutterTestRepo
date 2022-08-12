@@ -5,15 +5,12 @@ import 'package:price_tracker/data/api/requests/active_symbol_request.dart';
 import 'package:price_tracker/data/api/requests/price_request.dart';
 import 'package:price_tracker/utils/logger.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
-
-import 'api/api_client.dart';
 import 'api/responses/price_response.dart';
 
 class PTPriceCubit extends Cubit<String> {
   static const String baseURL = 'wss://ws.binaryws.com/websockets/v3?app_id=1089';
   WebSocketChannel? _channel;
-  PTApiClient _apiClient;
-  PTPriceCubit(this._apiClient) : super("");
+  PTPriceCubit() : super("");
 
   Future<void> unsubscribe() async {
     return await close();

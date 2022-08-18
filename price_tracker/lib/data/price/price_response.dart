@@ -1,12 +1,12 @@
-class PriceResponse {
+class PriceDataModel {
   EchoReq? echoReq;
   String? msgType;
   Subscription? subscription;
   Tick? tick;
 
-  PriceResponse({this.echoReq, this.msgType, this.subscription, this.tick});
+  PriceDataModel({this.echoReq, this.msgType, this.subscription, this.tick});
 
-  PriceResponse.fromJson(Map<String, dynamic> json) {
+  PriceDataModel.fromJson(Map<String, dynamic> json) {
     echoReq = json['echo_req'] != null
         ? new EchoReq.fromJson(json['echo_req'])
         : null;
